@@ -1,0 +1,56 @@
+[project]
+name = "ai-agents-for-beginners"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "autogen-agentchat",
+    "autogen-core",
+    "autogen-ext",
+    "datasets",
+    "chainlit",
+    "chromadb ~= 0.6.3",
+    "langfuse",
+    "mcp", # mcp[cli] 的基础包
+    "mistralai~=0.4.2",
+    "openai",
+    "openlit",
+    "pillow==11.0.0",
+    "python-dotenv~=1.0.1",
+    "pandas",
+    "semantic-kernel>=1.29.0",
+    "typing-extensions>=4.14.1",
+]
+
+[project.optional-dependencies]
+# --- 可选依赖：Azure 功能 ---
+# 包含所有与 Azure 集成相关的包。
+# 使用 'pip install .[azure]' 来安装。
+azure = [
+    "autogen-ext[azure]",
+    "semantic-kernel[azure]",
+    "azure-ai-inference~=1.0.0b9",
+    "azure-ai-projects==1.0.0b11",
+    "azure-search-documents>=11.5.2",
+]
+
+# --- 可选依赖：MCP 功能 ---
+# 包含与 MCP (Microsoft Clear Precog) 相关的包。
+# 使用 'pip install .[mcp]' 来安装。
+mcp = [
+    "semantic-kernel[mcp]",
+    "mcp[cli]",
+]
+
+# --- 可选依赖：开发环境 ---
+# 包含用于开发的工具，例如 Jupyter notebooks。
+# 使用 'pip install .[dev]' 来安装。
+dev = [
+    "ipykernel~=6.29.5",
+]
+
+# --- 项目URL (可选) ---
+[project.urls]
+Homepage = "https://github.com/your-username/your-awesome-project"
+Repository = "https://github.com/your-username/your-awesome-project"
